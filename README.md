@@ -35,11 +35,10 @@ The AI tracks your move history and identifies patterns. After 5+ games, it pred
 ## **Complete Project Structure:**
 ```
 RPS_AI_Game/
-│
-├── game.py              # Game logic
-├── ai_model.py          # AI intelligence
-├── main.py              # CLI version
-├── gui.py               # GUI version
-├── README.md            # Documentation
-├── requirements.txt     # Dependencies
-└── screenshots/         # Game screenshots
+ game.py              # Game logic
+ ai_model.py          # AI intelligence
+ main.py              # CLI version
+ gui.py               # GUI version
+ README.md            # Documentation
+ requirements.txt     # Dependencies
+ screenshots/         # Game screenshots
