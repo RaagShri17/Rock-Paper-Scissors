@@ -39,7 +39,6 @@ Rock-Paper-Scissors/
 ### Requirements
 - Python 3.x (no external libraries needed for basic version)
 - Tkinter (usually comes with Python by default)
-- Matplotlib (only needed for stats charts in GUI)
 
 ### Terminal Mode
 ```bash
@@ -92,6 +91,7 @@ The GUI window has:
 - Three colored move buttons (Red = Rock, Blue = Paper, Green = Scissors)
 - An AI status label showing what it's currently predicting
 - A "View Detailed Stats" button and a "Reset Game" button
+## NOTE : put on full screen window for better experience
 
 ---
 
@@ -132,6 +132,7 @@ The GUI window has:
 - Save and load AI learning data using a JSON file
 - Add sound effects using the paths already defined in config.py
 - Complete the stats charts using matplotlib
+- Create a 3D GUI for Cool and Attractive experience
 
 ---
 
@@ -139,7 +140,7 @@ The GUI window has:
 
 **Raag Shri**  
 B.Tech First Year | School of Computing Science Engineering and Artificial Intelligence  
-Roll No: 25BAI10431 | Batch: 2025-29
+Roll No: 25BAI10431 | Batch: 2025-29 |
 VIT Bhopal University
 
 ---
