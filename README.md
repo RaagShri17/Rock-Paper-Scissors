@@ -103,7 +103,6 @@ The GUI window has:
 | Tkinter | Graphical user interface |
 | `collections.defaultdict` | Storing Markov transition data |
 | `collections.Counter` | Frequency counting of player moves |
-| Matplotlib | Statistics charts (GUI stats window) |
 
 ---
 
@@ -138,13 +137,13 @@ The GUI window has:
 
 ## 👨‍💻 Author
 
-**[Your Name]**  
-B.Tech First Year | Department of Computer Science & Engineering  
-Roll No: [XXXXXX] | Batch: [202X–202X]
+**Raag Shri**  
+B.Tech First Year | School of Computing Science Engineering and Artificial Intelligence  
+Roll No: 25BAI10431 | Batch: 2025-29
 
 ---
 
 ## 📄 License
 
-This project was built for educational purposes as part of a B.Tech mini-project.  
+This project was built for educational purposes as part of VITyarthi Course Project.  
 Feel free to use or modify it for learning.
