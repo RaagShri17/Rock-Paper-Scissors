@@ -49,7 +49,6 @@ class RPSGame:
             self.ai_score += 1
         else:
             self.ties += 1
-        
         return result
     
     def get_stats(self):
@@ -67,3 +66,11 @@ def analyze_player_tendencies(self):
     from collections import Counter
     freq = Counter(self.game.player_history)
     return freq.most_common()
+
+def get_counter_move(self, move):
+    counter = {
+        "rock": "paper",
+        "paper": "scissors",
+        "scissors": "rock"
+    }
+    return counter[move]
