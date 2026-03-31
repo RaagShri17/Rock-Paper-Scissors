@@ -3,6 +3,9 @@ import tkinter as tk
 from tkinter import messagebox
 from game import RPSGame
 from ai_model import RPS_AI
+import matplotlib.pyplot as plt
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+from collections import Counter
 
 class RPS_GUI:
     def __init__(self):
@@ -13,9 +16,13 @@ class RPS_GUI:
         self.window = tk.Tk()
         self.window.title("🎮 Rock-Paper-Scissors AI")
         self.window.geometry("500x600")
-        self.window.configure(bg='#2C3E50')
+        self.window.configure(bg='#0f172a')
         
         self.create_widgets()
+
+    def ai_thinking(self):
+       self.result_label.config(text="🤖 AI is thinking...")
+       self.window.update()
     
     def create_widgets(self):
         # Title
@@ -37,6 +44,15 @@ class RPS_GUI:
             fg='#ECF0F1'
         )
         subtitle.pack()
+
+        self.ai_label = tk.Label(
+            self.window,
+            text="🤖 AI Status: Learning...",
+            font=("Arial", 12, "bold"),
+            bg='#0f172a',
+            fg='#00f5ff'
+        )
+        self.ai_label.pack(pady=10)
         
         # Score display
         self.score_label = tk.Label(
@@ -90,7 +106,7 @@ class RPS_GUI:
             self.window,
             text="📊 View Detailed Stats",
             font=("Arial", 12),
-            bg='#95A5A6',
+            bg="#2B0EE7",
             fg='white',
             command=self.show_stats
         )
@@ -108,17 +124,27 @@ class RPS_GUI:
         reset_btn.pack(pady=5)
     
     def play(self, player_move):
-        # AI makes move
-        ai_move = self.ai.get_ai_move_with_randomness(
-            self.game.player_history,
-            self.game
-        )
-        
-        # Play round
+        self.ai_thinking()
+
+    def play(self, player_move):
+        self.ai_thinking()
+    
+        # ✅ Get AI move
+        ai_move = self.ai.get_ai_move(self.game.player_history, self.game)
+    
+        # ✅ Play round
         result = self.game.play_round(player_move, ai_move)
-        
-        # Update display
+    
+        # ✅ VERY IMPORTANT → Update AI learning
+        self.ai.update_model(player_move)
+    
+        # ✅ Prediction display
+        prediction = self.ai.predict_next_move()
+        self.ai_label.config(text=f"🤖 AI predicts: {prediction.upper()}")
+    
+        # ✅ Update UI properly
         self.update_display(player_move, ai_move, result)
+       
     
     def update_display(self, player_move, ai_move, result):
         # Update score
@@ -182,4 +208,3 @@ Ties: {stats['ties']}
 if __name__ == "__main__":
     app = RPS_GUI()
     app.run()
-
